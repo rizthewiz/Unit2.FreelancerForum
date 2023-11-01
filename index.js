@@ -46,24 +46,24 @@ function calculateAvg() {
 
 const intervalId = setInterval(() => {
   freelancers.push(generateRandomFreelancer());
-  //   render();
-}, 10000);
+  render();
+}, 5000);
 
 function render() {
   //   const freelancerList = document.getElementById("freelancers");
-  console.log(freelancers);
-  console.log(freelancers.name);
-  console.log(freelancerList);
-  const freelancerEls = freelancers.map(() => {
-    console.log(freelancers.name);
+  const freelancerEls = freelancers.map((el) => {
+    el.name;
     const listItem = document.createElement("li");
-    listItem.setAttribute("name");
-    listItem.setAttribute("price");
-    listItem.setAttribute("occupation");
-    console.log(listItem);
+    const avg = calculateAvg();
+    p.textContent = `The average starting price is $${avg}`;
+    listItem.setAttribute("name", el.name);
+    listItem.setAttribute("price", el.price);
+    listItem.setAttribute("occupation", el.occupation);
+    listItem.textContent = `Name: ${el.name} Price: $${el.price} Occupation: ${el.occupation}`;
+    return listItem;
   });
-  console.log(freelancerEls);
   freelancerList.replaceChildren(...freelancerEls);
+  setInterval();
 }
 
 render();
